@@ -144,7 +144,8 @@ def create(vm_):
         'image': get_image(conn, vm_),
         'size': get_size(conn, vm_),
         'location': get_location(conn, vm_),
-        'auth': NodeAuthPassword(get_password(vm_))
+        'auth': NodeAuthPassword(get_password(vm_)),
+        'lroot': '%s Disk Image' % get_image(conn, vm_)
     }
 
     saltcloud.utils.fire_event(
